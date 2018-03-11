@@ -11,8 +11,8 @@ class KotlinSpeechletRequestHandler : SpeechletRequestStreamHandler(KotlinSpeech
     companion object {
         private val supportedApplicationIds = HashSet<String>()
         init {
-            // FIXME change this id
-            supportedApplicationIds.add("amzn1.ask.skill.af183920-ecab-4dfd-849a-514aeabbea08")
+            // Fill here the skill id of your generated Skill
+            supportedApplicationIds.add("amzn1.ask.skill.50b9f4ef-1c02-4e72-bd4c-1bbdf1df61f5")
         }
     }
 

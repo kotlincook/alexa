@@ -17,7 +17,7 @@ class KotlinSpeechlet : Speechlet {
     override fun onIntent(request: IntentRequest, session: Session): SpeechletResponse {
 
         // change this:
-        if ("KotlinIntent" == request.intent.name) {
+        if ("KotlinBlogIntent" == request.intent.name) {
             return binColourResponse()
         }
         else {
@@ -31,9 +31,9 @@ class KotlinSpeechlet : Speechlet {
 
     private fun binColourResponse(): SpeechletResponse {
         var kotlinOutput = "Simply text"
-        val speechText = "Welcome to Kotlin. $kotlinOutput"
+        val speechText = "Welcome to KotlinBlog. $kotlinOutput"
         val card = SimpleCard()
-        card.title = "Kotlin"
+        card.title = "KotlinBlog"
         card.content = speechText
         val speech = PlainTextOutputSpeech()
         speech.text = speechText
