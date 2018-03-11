@@ -26,11 +26,10 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    compile "org.jetbrains.kotlin:kotlin-reflect:1.2.30"
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
     compile 'com.amazon.alexa:alexa-skills-kit:1.1.2'
     compile 'com.amazonaws:aws-lambda-java-core:1.0.0'
-    compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.8.2"
-
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.2"
     compile 'log4j:log4j:1.2.17'
     compile 'org.apache.commons:commons-lang3:3.3.2'
     compile 'org.apache.directory.studio:org.apache.commons.io:2.4'
