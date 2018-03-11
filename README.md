@@ -1,2 +1,6 @@
-# alexa
-Programming Alexa with Kotlin
+## Programming Alexa with Kotlin
+
+
+
+## Build
+gradle shadowJar
