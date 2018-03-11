@@ -1,0 +1,40 @@
+{
+  "session": {
+    "new": true,
+    "sessionId": "SessionId.c09277ce-a1db-4df7-9b08-e5ad9906f9fa",
+    "application": {
+      "applicationId": "amzn1.ask.skill.50b9f4ef-1c02-4e72-bd4c-1bbdf1df61f5"
+    },
+    "attributes": {},
+    "user": {
+      "userId": "amzn1.ask.account.AEE5FVTK4DNDQPHCZYCGUYP7EFM5NHZL5MTLXK5OD2KBOH7OL4ONXQ2GMMLSQUEWIAX3WCVUXRMHGCYFY4IMQHCTOJYKSK6I23ZZG2LRO5ARCPM72KZURGX3STRJBGFYEFU4ZTANMEVKHJC7NIE4PMCAMB33ZAOP7CV2KM4ZNMBSOJZKVT5PMZTHKWGISWUFNUGUNQ3XHWJH2WA"
+    }
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.bdfa0cce-d27e-4e85-aad3-be2179e1fece",
+    "intent": {
+      "name": "KotlinBlogIntent",
+      "slots": {}
+    },
+    "locale": "en-US",
+    "timestamp": "2018-03-03T23:20:33Z"
+  },
+  "context": {
+    "AudioPlayer": {
+      "playerActivity": "IDLE"
+    },
+    "System": {
+      "application": {
+        "applicationId": "amzn1.ask.skill.50b9f4ef-1c02-4e72-bd4c-1bbdf1df61f5"
+      },
+      "user": {
+        "userId": "amzn1.ask.account.AEE5FVTK4DNDQPHCZYCGUYP7EFM5NHZL5MTLXK5OD2KBOH7OL4ONXQ2GMMLSQUEWIAX3WCVUXRMHGCYFY4IMQHCTOJYKSK6I23ZZG2LRO5ARCPM72KZURGX3STRJBGFYEFU4ZTANMEVKHJC7NIE4PMCAMB33ZAOP7CV2KM4ZNMBSOJZKVT5PMZTHKWGISWUFNUGUNQ3XHWJH2WA"
+      },
+      "device": {
+        "supportedInterfaces": {}
+      }
+    }
+  },
+  "version": "1.0"
+}
