@@ -3,13 +3,14 @@
 ## Build
 gradle shadowJar
 
-## AWS
+## Developer Console
 * Goto https://developer.amazon.com/edw/home.html#/ and select "Alexa Skill Kit"
 * Create Skill -> KotlinBlog
-* Custom, follow the instructions...
+* Custom, follow the the instructions...
 * Take the Skill-ID: amzn1.ask.skill.50b9f4ef-1c02-4e72-bd4c-1bbdf1df61f5 and put it into the code
 * Take the Intent name and put it into the code
 * EndPoint: AWS Lambda ARN: (s. "Take the ARN")
+## AWS
 * AWS-Lamda: Create function:
   * Name: KotlinBlog
   * Runtime: Java 8
@@ -21,7 +22,7 @@ gradle shadowJar
   * Change "example.Hello::myHandler" to "de.kotlincook.KotlinSpeechletRequestHandler"
   * Upload kotlinblog-1.0-SNAPSHOT-all.jar
 * Take the ARN:  arn:aws:lambda:us-east-1:911903515210:function:KotlinBlog
-  * and put it into the field "EndPoint" (s.o.)
+  * and put it into the field "EndPoint" in the developer console (s.o.)
 
 ## Testing
 FirstTest -> test.json
