@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<title>Kotlin Blog | Kotlin — Programming Language by JetBrains</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+
+<!-- Very good code. Much features. Usefulness. -->
+<meta name="google-site-verification" content="-VjL7M-0yYEgv4tXCdt-4qZm2b5sjaEJX4rwBJ2iTFQ" ></meta>
+<link rel="stylesheet" href="https://resources.jetbrains.com/storage/ui/blogs.css?1520800777">
+<script src="https://resources.jetbrains.com/storage/ui/blogs.js?1520800777"></script>
+<script>
+ui.subscribeForm("#newsSubscriptionForm");
+ui.gifPlayer("img[data-gif-src]");
+</script>
+
+<link rel="stylesheet" type="text/css" href="//resources.jetbrains.com/storage/ui/fonts/fonts.css" />
+<link rel="stylesheet" type="text/css" media="all" href="https://d3nmt5vlzunoa1.cloudfront.net/kotlin/wp-content/themes/JetBrainsNew/style.css" />
+<link rel="pingback" href="https://blog.jetbrains.com/kotlin/xmlrpc.php" />
+
+<!-- Google Tag Manager for WordPress by DuracellTomi - http://duracelltomi.com -->
+<script type="text/javascript">
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || []
+</script>
+<!-- End Google Tag Manager for WordPress by DuracellTomi --><link rel="alternate" type="application/rss+xml" title="Kotlin Blog &raquo; Feed" href="https://blog.jetbrains.com/kotlin/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Kotlin Blog &raquo; Comments Feed" href="https://blog.jetbrains.com/kotlin/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"https:\/\/blog.jetbrains.com\/kotlin\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.14"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;return g&&g.fillText?(g.textBaseline="top",g.font="600 32px Arial","flag"===a?(g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3):"diversity"===a?(g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e):("simple"===a?g.fillText(h(55357,56835),0,0):g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-css'  href='https://d3nmt5vlzunoa1.cloudfront.net/kotlin/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-theme-classic-css'  href='https://d3nmt5vlzunoa1.cloudfront.net/kotlin/wp-content/plugins/crayon-syntax-highlighter/themes/classic/classic.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css'  href='https://d3nmt5vlzunoa1.cloudfront.net/kotlin/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta' type='text/css' media='all' />
+<link rel='stylesheet' id='sccss_style-css'  href='https://blog.jetbrains.com/kotlin/?sccss=1&#038;ver=4.4.14' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://d3nmt5vlzunoa1.cloudfront.net/kotlin/wp-content/plugins/jetpack/css/jetpack.css?ver=3.9.7' type='text/css' media='all' />
+<link rel='stylesheet' id='A2A_SHARE_SAVE-css'  href='https://d3nmt5vlzunoa1.cloudfront.net/kotlin/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.12' type='text/css' media='all' />
+<style id='A2A_SHARE_SAVE-inline-css' type='text/css'>
+.addtoany_list a{
+width:40px !important;
+height:40px !important;
+}
+.a2a_label {
+pointer-events: none;
+}
+.a2a_svg {
+    border-radius: 16px !important;
+}
+.addtoany_share_save_container { text-align:center; margin-bottom:50px;}
+.a2a_count {
+margin-left:22px !important;
+margin-top:-44px !important;
+border:2px solid white !important;
+background:SteelBlue !important;
+height:20px !important;
+width:30px !important;
+color:white !important;
+}
+
+.a2a_count span {
+    font-size: 10px !important;
+    font-weight: bold !important;
+    position:absolute !important;
+    margin: -7px -25px !important;
+    position: absolute !important;
+    width: 50px;
+    text-align:center !important;
+}
+.a2a_count:after {visibility:hidden !important}
+.a2a_count:before {visibility:hidden !important}
+</style>
+<script type='text/javascript' src='https://d3nmt5vlzunoa1.cloudfront.net/kotlin/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='https://d3nmt5vlzunoa1.cloudfront.net/kotlin/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/blog.jetbrains.com\/kotlin\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://d3nmt5vlzunoa1.cloudfront.net/kotlin/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta'></script>
+<script type='text/javascript' src='https://d3nmt5vlzunoa1.cloudfront.net/kotlin/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1.2'></script>
+<link rel='https://api.w.org/' href='https://blog.jetbrains.com/kotlin/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blog.jetbrains.com/kotlin/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://d3nmt5vlzunoa1.cloudfront.net/kotlin/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 4.4.14" />
+<link rel='shortlink' href='https://wp.me/4qY67' />
+
+<link rel="shortcut icon" href="http://kotlinlang.org/assets/images/favicon.ico" />
+<link rel="apple-touch-icon" href="https://d3nmt5vlzunoa1.cloudfront.net/kotlin/wp-content/plugins/multicons/images/apple-touch-icon.png" />
+
+<script type="text/javascript"><!--
+var a2a_config=a2a_config||{},wpa2a={done:false,html_done:false,script_ready:false,script_load:function(){var a=document.createElement('script'),s=document.getElementsByTagName('script')[0];a.type='text/javascript';a.async=true;a.src='https://static.addtoany.com/menu/page.js';s.parentNode.insertBefore(a,s);wpa2a.script_load=function(){};},script_onready:function(){wpa2a.script_ready=true;if(wpa2a.html_done)wpa2a.init();},init:function(){for(var i=0,el,target,targets=wpa2a.targets,length=targets.length;i<length;i++){el=document.getElementById('wpa2a_'+(i+1));target=targets[i];a2a_config.linkname=target.title;a2a_config.linkurl=target.url;if(el){a2a.init('page',{target:el});el.id='';}wpa2a.done=true;}wpa2a.targets=[];}};a2a_config.callbacks=a2a_config.callbacks||[];a2a_config.callbacks.push({ready:wpa2a.script_onready});a2a_config.templates=a2a_config.templates||{};
+//--></script>
+
+<link rel='dns-prefetch' href='//i0.wp.com'>
+<link rel='dns-prefetch' href='//i1.wp.com'>
+<link rel='dns-prefetch' href='//i2.wp.com'>
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Kotlin Blog" />
+<meta property="og:description" content="Kotlin — Programming Language by JetBrains" />
+<meta property="og:url" content="https://blog.jetbrains.com/kotlin/" />
+<meta property="og:site_name" content="Kotlin Blog" />
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:site" content="@kotlin" />
+
+<!-- Google Tag Manager for WordPress by DuracellTomi -->
+<script type="text/javascript">
+	dataLayer.push({"pagePostType":"frontpage"});
+</script>
+<style id="custom-css-css">/*
+Welcome to Custom CSS!
+
+To learn how this works, see http://wp.me/PEmnE-Bt
+*/</style>
+</head>
+
+<body class="home blog">
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5P98"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5P98');</script>
+<!-- End Google Tag Manager --><div id="wrapper" class="hfeed">
+	<div id="header">
+		<div id="masthead">
+
+			<div id="branding" role="banner">
+								<h1 id="site-title">
+					<span>
+						<a href="https://blog.jetbrains.com/kotlin/" title="Kotlin Blog" rel="home">Kotlin Blog</a>
+					</span>
+				</h1>
+				<div id="site-description">Kotlin — Programming Language by JetBrains</div>
+
+							</div><!-- #branding -->
+
+
+			<div id="access" role="navigation">
+			  				<div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
+								<div class="menu-header"><ul id="menu-blog-menu" class="menu"><li id="menu-item-4930" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4930"><a title="kotlinconf" href="https://www.kotlinconf.com/?utm_source=jetbrainscom&#038;utm_medium=web&#038;utm_content=kotlin-blog-menu&#038;utm_campaign=superearlybird">Conference</a></li>
+<li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9"><a href="https://kotlinlang.org">Kotlin Home Page</a></li>
+<li id="menu-item-6" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6"><a href="http://twitter.com/kotlin">Twitter</a></li>
+<li id="menu-item-3492" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3492"><a title="Slack Link" href="http://kotlinslackin.herokuapp.com/">Slack</a></li>
+</ul></div>			</div><!-- #access -->
+
+
+		</div><!-- #masthead -->
+	</div><!-- #header -->
+
+	<div id="main">
+
+		<div id="container">
+			<div id="content" role="main">
+
+
+    <div id="nav-above" class="navigation">
+        <div class="nav-previous"><a href="https://blog.jetbrains.com/kotlin/page/2/" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+        <div class="nav-next"></div>
+    </div><!-- #nav-above -->
+
+
+
+
+            <div id="post-5769" class="post-5769 post type-post status-publish format-standard hentry category-releases tag-newsletter">
+            <h2 class="entry-title"><a href="https://blog.jetbrains.com/kotlin/2018/03/kotlin-1-2-30-is-out/" rel="bookmark">Kotlin 1.2.30 is out</a></h2>
+
+            <div class="entry-meta">
+                <span class="meta-prep meta-prep-author"> Posted on </span> <a href="https://blog.jetbrains.com/kotlin/2018/03/kotlin-1-2-30-is-out/" title="9:11 pm" rel="bookmark"><span class="entry-date">March 1, 2018</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="https://blog.jetbrains.com/kotlin/author/sergeyigushkin/" title="View all posts by Sergey Igushkin">Sergey Igushkin</a></span>            </div><!-- .entry-meta -->
+
+                            <div class="entry-content">
+                    <p>We’re happy to announce the release of Kotlin 1.2.30, a new bugfix and tooling update for Kotlin 1.2. This update:</p>
+<ul>
+<li>Adds a new declaration in the standard library, which imitates the <code>suspend</code> modifier for lambda expressions</li>
+<li>Adds support for TestNG in <code>kotlin.test</code></li>
+<li>Brings support for Android modules in multiplatform projects</li>
+<li>Introduces a new feature in kapt for reporting annotation processing errors along with proper links to the original Kotlin declarations</li>
+<li>Adds a lot of new inspections and intentions in the IntelliJ plugin and improves its performance</li>
+<li>Fixes bugs in the compiler and IntelliJ plugin</li>
+</ul>
+<p>The update is compatible with all versions of IntelliJ IDEA from 2017.1 until 2017.3 and 2018.1 EAP, as well as with Android Studio 3.0 and Android Studio 3.1 (Beta)</p>
+<p> <a href="https://blog.jetbrains.com/kotlin/2018/03/kotlin-1-2-30-is-out/#more-5769" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+                                    </div><!-- .entry-content -->
+
+            <div class="entry-utility">
+                                    <span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="https://blog.jetbrains.com/kotlin/category/releases/" rel="category tag">Releases</a>					</span>
+                    <span class="meta-sep">|</span>
+                                                    <span class="tag-links">
+						<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="https://blog.jetbrains.com/kotlin/tag/newsletter/" rel="tag">newsletter</a>					</span>
+                    <span class="meta-sep">|</span>
+                                <span class="comments-link"><a href="https://blog.jetbrains.com/kotlin/2018/03/kotlin-1-2-30-is-out/#comments">12 Comments</a></span>
+                            </div><!-- .entry-utility -->
+        </div><!-- #post-## -->
+
+
+
+
+
+            <div id="post-5748" class="post-5748 post type-post status-publish format-standard hentry category-native category-releases category-tools tag-newsletter">
+            <h2 class="entry-title"><a href="https://blog.jetbrains.com/kotlin/2018/02/kotlinnative-v0-6-is-here/" rel="bookmark">Kotlin/Native v0.6 is Here!</a></h2>
+
+            <div class="entry-meta">
+                <span class="meta-prep meta-prep-author"> Posted on </span> <a href="https://blog.jetbrains.com/kotlin/2018/02/kotlinnative-v0-6-is-here/" title="11:06 pm" rel="bookmark"><span class="entry-date">February 14, 2018</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="https://blog.jetbrains.com/kotlin/author/roman-belov/" title="View all posts by Roman Belov">Roman Belov</a></span>            </div><!-- .entry-meta -->
+
+                            <div class="entry-content">
+                    <p>We are pleased to announce Kotlin/Native v0.6 (Valentine’s Day release) of our toolchain. This is a major update, including the following features:</p>
+<ul>
+<li>Support for multiplatform projects in compiler and Gradle plugin</li>
+<li>Transparent Objective-C/Kotlin container classes interoperability</li>
+<li>Support first embedded target (STM32 board)</li>
+<li>Kotlin 1.2.20, Gradle 4.5 and Java 9 supported</li>
+<li>Smaller WebAssembly binaries (basic applications is around 160KiB now)</li>
+<li>CLion plugin update for CLion 2018.1 (fixed the issue with macOS platform libraries indexer)</li>
+</ul>
+<p> <a href="https://blog.jetbrains.com/kotlin/2018/02/kotlinnative-v0-6-is-here/#more-5748" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+                                    </div><!-- .entry-content -->
+
+            <div class="entry-utility">
+                                    <span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="https://blog.jetbrains.com/kotlin/category/native/" rel="category tag">Native</a>, <a href="https://blog.jetbrains.com/kotlin/category/releases/" rel="category tag">Releases</a>, <a href="https://blog.jetbrains.com/kotlin/category/tools/" rel="category tag">Tools</a>					</span>
+                    <span class="meta-sep">|</span>
+                                                    <span class="tag-links">
+						<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="https://blog.jetbrains.com/kotlin/tag/newsletter/" rel="tag">newsletter</a>					</span>
+                    <span class="meta-sep">|</span>
+                                <span class="comments-link"><a href="https://blog.jetbrains.com/kotlin/2018/02/kotlinnative-v0-6-is-here/#comments">18 Comments</a></span>
+                            </div><!-- .entry-utility -->
+        </div><!-- #post-## -->
+
+
+
+
+
+            <div id="post-5460" class="post-5460 post type-post status-publish format-standard hentry category-coding category-native tag-newsletter">
+            <h2 class="entry-title"><a href="https://blog.jetbrains.com/kotlin/2018/02/application-development-in-kotlinnative/" rel="bookmark">Application development in Kotlin/Native</a></h2>
+
+            <div class="entry-meta">
+                <span class="meta-prep meta-prep-author"> Posted on </span> <a href="https://blog.jetbrains.com/kotlin/2018/02/application-development-in-kotlinnative/" title="6:14 pm" rel="bookmark"><span class="entry-date">February 7, 2018</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="https://blog.jetbrains.com/kotlin/author/igotti/" title="View all posts by Nikolay Igotti">Nikolay Igotti</a></span>            </div><!-- .entry-meta -->
+
+                            <div class="entry-content">
+                    <p>In this blog post we are discussing development of Kotlin/Native applications. Today we take a look on basic video player, using <a href="https://en.wikipedia.org/wiki/FFmpeg">FFMPEG</a> audio/video decoder and <a href="https://en.wikipedia.org/wiki/Simple_DirectMedia_Layer">SDL2</a> for rendering. Hopefully, it will be useful guide for Kotlin/Native development enthusiasts and will explain intended mechanisms of using the platform.</p>
+<p>As main focus in our tutorial is on Kotlin/Native, we will give only cursory view on how videoplayer shall be developed. Please see this <a href="http://dranger.com/ffmpeg/ffmpeg.html">excellent tutorial</a>, called &#8220;How to Write a Video Player in Less Than 1000 Lines&#8221; for reference on how it could be done in C language. If you&#8217;re interested in comparing how coding in C differs to coding in Kotlin/Native, I would recommend starting with this tutorial.</p>
+<p> <a href="https://blog.jetbrains.com/kotlin/2018/02/application-development-in-kotlinnative/#more-5460" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+                                    </div><!-- .entry-content -->
+
+            <div class="entry-utility">
+                                    <span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="https://blog.jetbrains.com/kotlin/category/coding/" rel="category tag">Coding</a>, <a href="https://blog.jetbrains.com/kotlin/category/native/" rel="category tag">Native</a>					</span>
+                    <span class="meta-sep">|</span>
+                                                    <span class="tag-links">
+						<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="https://blog.jetbrains.com/kotlin/tag/newsletter/" rel="tag">newsletter</a>					</span>
+                    <span class="meta-sep">|</span>
+                                <span class="comments-link"><a href="https://blog.jetbrains.com/kotlin/2018/02/application-development-in-kotlinnative/#comments">23 Comments</a></span>
+                            </div><!-- .entry-utility -->
+        </div><!-- #post-## -->
+
+
+
+
+
+            <div id="post-5717" class="post-5717 post type-post status-publish format-standard has-post-thumbnail hentry category-guestpost category-tools tag-newsletter">
+            <h2 class="entry-title"><a href="https://blog.jetbrains.com/kotlin/2018/02/using-gradle-build-cache-with-kotlin/" rel="bookmark">Using Gradle build cache with Kotlin</a></h2>
+
+            <div class="entry-meta">
+                <span class="meta-prep meta-prep-author"> Posted on </span> <a href="https://blog.jetbrains.com/kotlin/2018/02/using-gradle-build-cache-with-kotlin/" title="6:29 pm" rel="bookmark"><span class="entry-date">February 6, 2018</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="https://blog.jetbrains.com/kotlin/author/roman-belov/" title="View all posts by Roman Belov">Roman Belov</a></span>            </div><!-- .entry-meta -->
+
+                            <div class="entry-content">
+                    <p><center></p>
+<div style="background-color: #f1f6fe; margin-bottom: 40px; padding: 15px; line-height: 20px; text-align: justify; overflow: auto; width: 500px;">
+<p><img style="float: left; margin-right: 15px; margin-top: 0px;" title="Eric Wendelin" src="https://avatars3.githubusercontent.com/u/51534" alt="Eric Wendelin" width="70" height="70" /><br />
+This is a guest blog post from <a href="https://github.com/eriwen">Eric Wendelin</a><br />
+<i>software engineer for Gradle</i>
+</div>
+<p></center></p>
+<p>A <a href="https://blog.gradle.org/introducing-gradle-build-cache">build cache</a> allows Gradle to reuse task output from <em>any previous invocation, including those from other machines</em>. <a href="https://blog.jetbrains.com/kotlin/2018/01/kotlin-1-2-20-is-out/">Kotlin 1.2.21</a> allows Kotlin projects to make use of build caching.</p>
+<p>The build cache works by storing compiled classes, test outputs, and other build artifacts in a cache, taking into account all task inputs, including input file contents, relevant classpaths, and task configuration.</p>
+<p><img class="alignnone size-full wp-image-5722" src="https://d3nmt5vlzunoa1.cloudfront.net/kotlin/files/2018/02/build-cache-topological-diagram.png" alt="Build Cache topological diagram" /></p>
+<p>This frequently results in <em>faster builds</em>. The following chart shows aggregated build time with and without the build cache for part of Gradle&#8217;s CI:</p>
+<p><img class="alignnone size-full wp-image-5721" src="https://d3nmt5vlzunoa1.cloudfront.net/kotlin/files/2018/02/build-cache-total-build-minutes.png" alt="Build minutes saved with Gradle build cache" /></p>
+<p>In this post, we&#8217;ll explain how you can use Gradle&#8217;s build cache to avoid unnecessary Kotlin compilation to speed up your builds.<br />
+ <a href="https://blog.jetbrains.com/kotlin/2018/02/using-gradle-build-cache-with-kotlin/#more-5717" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+                                    </div><!-- .entry-content -->
+
+            <div class="entry-utility">
+                                    <span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="https://blog.jetbrains.com/kotlin/category/guestpost/" rel="category tag">guestpost</a>, <a href="https://blog.jetbrains.com/kotlin/category/tools/" rel="category tag">Tools</a>					</span>
+                    <span class="meta-sep">|</span>
+                                                    <span class="tag-links">
+						<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="https://blog.jetbrains.com/kotlin/tag/newsletter/" rel="tag">newsletter</a>					</span>
+                    <span class="meta-sep">|</span>
+                                <span class="comments-link"><a href="https://blog.jetbrains.com/kotlin/2018/02/using-gradle-build-cache-with-kotlin/#comments">13 Comments</a></span>
+                            </div><!-- .entry-utility -->
+        </div><!-- #post-## -->
+
+
+
+
+
+            <div id="post-5700" class="post-5700 post type-post status-publish format-standard hentry category-releases tag-newsletter">
+            <h2 class="entry-title"><a href="https://blog.jetbrains.com/kotlin/2018/01/kotlin-1-2-20-is-out/" rel="bookmark">Kotlin 1.2.20 is out</a></h2>
+
+            <div class="entry-meta">
+                <span class="meta-prep meta-prep-author"> Posted on </span> <a href="https://blog.jetbrains.com/kotlin/2018/01/kotlin-1-2-20-is-out/" title="2:54 pm" rel="bookmark"><span class="entry-date">January 17, 2018</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="https://blog.jetbrains.com/kotlin/author/dmitry-jemerov/" title="View all posts by Dmitry Jemerov">Dmitry Jemerov</a></span>            </div><!-- .entry-meta -->
+
+                            <div class="entry-content">
+                    <p>We’re happy to announce the release of Kotlin 1.2.20, a new bugfix and tooling update for Kotlin 1.2. This update:</p>
+<ul>
+<li>Adds support for Gradle build cache</li>
+<li>Improves incremental compilation for Android and mixed Kotlin/Java projects</li>
+<li>Provides IDE support for the new Kotlin style guide</li>
+<li>Adds inlay hints in the editor for implicit parameters and receivers of lambdas, as well as values returned from lambdas</li>
+<li>Supports development mode in JavaScript DCE Gradle task</li>
+<li>Introduces new inspections, performance improvements and bug fixes in the IntelliJ plugin</li>
+</ul>
+<p>The update is compatible with all versions of IntelliJ IDEA from 2017.1 until 2017.3, as well as with Android Studio 3.0 and 3.1 Canary.</p>
+<p>The complete list of changes in this release can be found in the <a href="https://github.com/JetBrains/kotlin/blob/1.2.20/ChangeLog.md">changelog</a>.</p>
+<p>We’d like to thank our external contributors whose pull requests were included in this release: <a href="https://github.com/t-kameyama">Toshiaki Kameyama</a> (with an impressive number of contributions &#8211; 46 commits!), <a href="https://github.com/shiraji">Yoshinori Isogai</a>, <a href="https://github.com/tommykw">Kenji Tomita</a>,<a href="https://github.com/cypressious"> Kirill Rakhman</a>, <a href="https://github.com/colriot">Sergey Ryabov</a>, <a href="http://github.com/ltongues">Alexey Belkov</a>, <a href="http://github.com/bendowski">Michal Bendowski</a>, <a href="http://github.com/AdamMc331">AdamMc331</a>, <a href="https://github.com/akperkins">Andre Perkins</a>, <a href="http://github.com/gildor">Andrey Mischenko</a>, <a href="http://github.com/artem-zinnatullin">Artem Zinnatullin</a>, <a href="http://github.com/cpovirk">Chris Povirk</a>, <a href="http://github.com/denisvnukov">Denis Vnukov</a>, <a href="http://github.com/devbridie">Dereck Bridie</a>, <a href="http://github.com/geralt-encore">Ilya Zorin</a>, <a href="http://github.com/JakeWharton">Jake Wharton</a>, <a href="http://github.com/joscha-alisch">Joscha Alisch</a>, <a href="http://github.com/kartikpatodi">Kartik Patodi</a>, <a href="http://github.com/ajalt">AJ Alt</a>, <a href="http://github.com/ramonwirsch">Ramon Wirsch</a>, <a href="http://github.com/vlad-kasatkin">Vladimir Kasatkin</a>, <a href="http://github.com/YusukeHosonuma">Yusuke Hosonuma</a>, <a href="http://github.com/a2kaido">a2kaido</a>, <a href="http://github.com/sckm">scache</a>.</p>
+<p> <a href="https://blog.jetbrains.com/kotlin/2018/01/kotlin-1-2-20-is-out/#more-5700" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+                                    </div><!-- .entry-content -->
+
+            <div class="entry-utility">
+                                    <span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="https://blog.jetbrains.com/kotlin/category/releases/" rel="category tag">Releases</a>					</span>
+                    <span class="meta-sep">|</span>
+                                                    <span class="tag-links">
+						<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="https://blog.jetbrains.com/kotlin/tag/newsletter/" rel="tag">newsletter</a>					</span>
+                    <span class="meta-sep">|</span>
+                                <span class="comments-link"><a href="https://blog.jetbrains.com/kotlin/2018/01/kotlin-1-2-20-is-out/#comments">58 Comments</a></span>
+                            </div><!-- .entry-utility -->
+        </div><!-- #post-## -->
+
+
+
+
+
+            <div id="post-5671" class="post-5671 post type-post status-publish format-standard hentry category-native category-releases category-tools">
+            <h2 class="entry-title"><a href="https://blog.jetbrains.com/kotlin/2017/12/kotlinnative-plugin-update/" rel="bookmark">Kotlin/Native Plugin Update</a></h2>
+
+            <div class="entry-meta">
+                <span class="meta-prep meta-prep-author"> Posted on </span> <a href="https://blog.jetbrains.com/kotlin/2017/12/kotlinnative-plugin-update/" title="7:25 pm" rel="bookmark"><span class="entry-date">December 26, 2017</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="https://blog.jetbrains.com/kotlin/author/roman-belov/" title="View all posts by Roman Belov">Roman Belov</a></span>            </div><!-- .entry-meta -->
+
+                            <div class="entry-content">
+                    <p>Greetings Kotlin fans,</p>
+<p>A New Year is coming and we are truly happy to make the last announcement of 2017. We’ve just released the update for Kotlin/Native plugin for CLion. It brings support for Kotlin/Native platform v0.5 which was <a href="https://blog.jetbrains.com/kotlin/2017/12/kotlinnative-v0-5-released-calling-kotlin-from-swift-and-c-llvm-5-and-more/">published recently</a>.</p>
+<p>As you may know, <a href="https://www.jetbrains.com/clion/">CLion</a> is a commercial IDE, but it&#8217;s gift time, so we want to give you a way to use Kotlin/Native plugin in its EAP stage for free. That’s why we are glad to provide all Kotlin/Native early adopters with a free 4-month personal subscription for the CLion IDE. If you are interested in it, please fill out and submit the following form:<br />
+ <a href="https://blog.jetbrains.com/kotlin/2017/12/kotlinnative-plugin-update/#more-5671" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+                                    </div><!-- .entry-content -->
+
+            <div class="entry-utility">
+                                    <span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="https://blog.jetbrains.com/kotlin/category/native/" rel="category tag">Native</a>, <a href="https://blog.jetbrains.com/kotlin/category/releases/" rel="category tag">Releases</a>, <a href="https://blog.jetbrains.com/kotlin/category/tools/" rel="category tag">Tools</a>					</span>
+                    <span class="meta-sep">|</span>
+                                                <span class="comments-link"><a href="https://blog.jetbrains.com/kotlin/2017/12/kotlinnative-plugin-update/#comments">1 Comment</a></span>
+                            </div><!-- .entry-utility -->
+        </div><!-- #post-## -->
+
+
+
+
+
+            <div id="post-5635" class="post-5635 post type-post status-publish format-standard hentry category-ios category-native category-releases tag-newsletter">
+            <h2 class="entry-title"><a href="https://blog.jetbrains.com/kotlin/2017/12/kotlinnative-v0-5-released-calling-kotlin-from-swift-and-c-llvm-5-and-more/" rel="bookmark">Kotlin/Native v0.5 released: calling Kotlin from Swift and C, LLVM 5 and more</a></h2>
+
+            <div class="entry-meta">
+                <span class="meta-prep meta-prep-author"> Posted on </span> <a href="https://blog.jetbrains.com/kotlin/2017/12/kotlinnative-v0-5-released-calling-kotlin-from-swift-and-c-llvm-5-and-more/" title="5:16 pm" rel="bookmark"><span class="entry-date">December 19, 2017</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="https://blog.jetbrains.com/kotlin/author/igotti/" title="View all posts by Nikolay Igotti">Nikolay Igotti</a></span>            </div><!-- .entry-meta -->
+
+                            <div class="entry-content">
+                    <p>We’re happy to announce the release of Kotlin/Native v0.5, Christmas edition! This release adds support for using Kotlin/Native code from C, Objective-C and Swift, supports development using iOS simulator, along with LLVM 5 support and creating WebAssembly from Linux and Windows hosts.</p>
+<p> <a href="https://blog.jetbrains.com/kotlin/2017/12/kotlinnative-v0-5-released-calling-kotlin-from-swift-and-c-llvm-5-and-more/#more-5635" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+                                    </div><!-- .entry-content -->
+
+            <div class="entry-utility">
+                                    <span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="https://blog.jetbrains.com/kotlin/category/ios/" rel="category tag">iOS</a>, <a href="https://blog.jetbrains.com/kotlin/category/native/" rel="category tag">Native</a>, <a href="https://blog.jetbrains.com/kotlin/category/releases/" rel="category tag">Releases</a>					</span>
+                    <span class="meta-sep">|</span>
+                                                    <span class="tag-links">
+						<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="https://blog.jetbrains.com/kotlin/tag/newsletter/" rel="tag">newsletter</a>					</span>
+                    <span class="meta-sep">|</span>
+                                <span class="comments-link"><a href="https://blog.jetbrains.com/kotlin/2017/12/kotlinnative-v0-5-released-calling-kotlin-from-swift-and-c-llvm-5-and-more/#comments">32 Comments</a></span>
+                            </div><!-- .entry-utility -->
+        </div><!-- #post-## -->
+
+
+
+
+
+            <div id="post-5598" class="post-5598 post type-post status-publish format-standard has-post-thumbnail hentry category-events-2 tag-newsletter">
+            <h2 class="entry-title"><a href="https://blog.jetbrains.com/kotlin/2017/12/webinar-recording-developing-multiplatform-projects-in-kotlin-1-2/" rel="bookmark">Webinar recording: Developing Multiplatform Projects in Kotlin 1.2</a></h2>
+
+            <div class="entry-meta">
+                <span class="meta-prep meta-prep-author"> Posted on </span> <a href="https://blog.jetbrains.com/kotlin/2017/12/webinar-recording-developing-multiplatform-projects-in-kotlin-1-2/" title="7:07 pm" rel="bookmark"><span class="entry-date">December 11, 2017</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="https://blog.jetbrains.com/kotlin/author/roman-belov/" title="View all posts by Roman Belov">Roman Belov</a></span>            </div><!-- .entry-meta -->
+
+                            <div class="entry-content">
+                    <p>Last week the webinar &#8220;Developing Multiplatform Projects in Kotlin 1.2&#8221; took place. Thanks to all participants for coming and good questions. Today we are happy to publish the recording of it. Don&#8217;t hesitate to suggest more themes for new webinars in comments. See you next time!</p>
+<p><iframe width="800" height="450" src="https://www.youtube.com/embed/afc5PUs_EPE" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen="allowfullscreen"></iframe></p>
+<p> <a href="https://blog.jetbrains.com/kotlin/2017/12/webinar-recording-developing-multiplatform-projects-in-kotlin-1-2/#more-5598" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+                                    </div><!-- .entry-content -->
+
+            <div class="entry-utility">
+                                    <span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="https://blog.jetbrains.com/kotlin/category/events-2/" rel="category tag">Events</a>					</span>
+                    <span class="meta-sep">|</span>
+                                                    <span class="tag-links">
+						<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="https://blog.jetbrains.com/kotlin/tag/newsletter/" rel="tag">newsletter</a>					</span>
+                    <span class="meta-sep">|</span>
+                                <span class="comments-link"><a href="https://blog.jetbrains.com/kotlin/2017/12/webinar-recording-developing-multiplatform-projects-in-kotlin-1-2/#comments">3 Comments</a></span>
+                            </div><!-- .entry-utility -->
+        </div><!-- #post-## -->
+
+
+
+
+
+            <div id="post-5591" class="post-5591 post type-post status-publish format-standard hentry category-community category-events-2 category-uncategorized tag-kotlinconf">
+            <h2 class="entry-title"><a href="https://blog.jetbrains.com/kotlin/2017/12/kotlinconf-2017-session-recordings-and-photos-are-here/" rel="bookmark">KotlinConf 2017 Session Recordings and Photos are Here!</a></h2>
+
+            <div class="entry-meta">
+                <span class="meta-prep meta-prep-author"> Posted on </span> <a href="https://blog.jetbrains.com/kotlin/2017/12/kotlinconf-2017-session-recordings-and-photos-are-here/" title="12:26 pm" rel="bookmark"><span class="entry-date">December 8, 2017</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="https://blog.jetbrains.com/kotlin/author/robert-demmer/" title="View all posts by Robert Demmer">Robert Demmer</a></span>            </div><!-- .entry-meta -->
+
+                            <div class="entry-content">
+                    <p>At last, they’re here!</p>
+<p>All <strong><a href="https://kotlinconf.com/talks/">KotlinConf session recordings</a></strong> are now available with their accompanying slides. Watch the talks you missed, and rewatch the ones you loved, all at your own leisure! While you’re at it, take a look at the newly published <strong><a href="https://kotlinconf.com/photos/">photo gallery</a></strong> and see if you can find yourself, friends, or colleagues.</p>
+<p>For a quick recap, check out the highlights video below and if you want, continue straight through the KotlinConf playlist on JetBrainsTV.</p>
+<div style="position: relative; height: 0; padding-bottom: 56.25%;"><iframe width="640" height="360" style="position: absolute; width: 100%; height: 100%; left: 0;" src="https://www.youtube.com/embed/videoseries?list=PLQ176FUIyIUY6UK1cgVsbdPYA3X5WLam5" frameborder="0" allowfullscreen="allowfullscreen"></iframe> <a href="https://blog.jetbrains.com/kotlin/2017/12/kotlinconf-2017-session-recordings-and-photos-are-here/#more-5591" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></div>
+                                    </div><!-- .entry-content -->
+
+            <div class="entry-utility">
+                                    <span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="https://blog.jetbrains.com/kotlin/category/community/" rel="category tag">community</a>, <a href="https://blog.jetbrains.com/kotlin/category/events-2/" rel="category tag">Events</a>, <a href="https://blog.jetbrains.com/kotlin/category/uncategorized/" rel="category tag">Uncategorized</a>					</span>
+                    <span class="meta-sep">|</span>
+                                                    <span class="tag-links">
+						<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="https://blog.jetbrains.com/kotlin/tag/kotlinconf/" rel="tag">kotlinconf</a>					</span>
+                    <span class="meta-sep">|</span>
+                                <span class="comments-link"><span>Comments Off<span class="screen-reader-text"> on KotlinConf 2017 Session Recordings and Photos are Here!</span></span></span>
+                            </div><!-- .entry-utility -->
+        </div><!-- #post-## -->
+
+
+
+
+
+            <div id="post-5530" class="post-5530 post type-post status-publish format-standard has-post-thumbnail hentry category-releases tag-sendtoall">
+            <h2 class="entry-title"><a href="https://blog.jetbrains.com/kotlin/2017/11/kotlin-1-2-released/" rel="bookmark">Kotlin 1.2 Released: Sharing Code between Platforms</a></h2>
+
+            <div class="entry-meta">
+                <span class="meta-prep meta-prep-author"> Posted on </span> <a href="https://blog.jetbrains.com/kotlin/2017/11/kotlin-1-2-released/" title="7:52 pm" rel="bookmark"><span class="entry-date">November 28, 2017</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="https://blog.jetbrains.com/kotlin/author/dmitry-jemerov/" title="View all posts by Dmitry Jemerov">Dmitry Jemerov</a></span>            </div><!-- .entry-meta -->
+
+                            <div class="entry-content">
+                    <p><center></p>
+<div style="margin:-30px 0px 10px 0px;padding:10px;border-color:#f0f0f0;display:inline-block;border-width:1px;border-style:solid;font-size:10">Members of our community have translated<br />
+this blog post into several languages:<br />
+<a title="Brazilian Portuguese" href="https://medium.com/@walmyrcarvalho/kotlin-1-2-compartilhando-c%C3%B3digo-entre-plataformas-c67fdc88a760" ><img style="display:inline;margin-bottom:-10px" src="https://d3nmt5vlzunoa1.cloudfront.net/kotlin/files/2017/03/br.png" width="25" /></a><a title="French" href="https://medium.com/@gz_k/kotlin-1-2-est-arriv%C3%A9-542381fe901c" ><img style="display:inline;margin-bottom:-10px" src="https://i1.wp.com/blog.jetbrains.com/kotlin/files/2017/03/france.png?w=25&#038;ssl=1" data-recalc-dims="1" /></a><a title="Japanese" href="https://blog.jetbrains.com/jp/2017/11/29/828" ><img style="display:inline;margin-bottom:-10px" src="https://d3nmt5vlzunoa1.cloudfront.net/kotlin/files/2017/03/japan.png" width="25" /></a><a title="Russian" href="https://habrahabr.ru/company/JetBrains/blog/343500/"><img style="display:inline;margin-bottom:-10px" src="https://d3nmt5vlzunoa1.cloudfront.net/kotlin/files/2017/03/russia.png" width="25" /></a><a title="Spanish" href="http://kotlin.es/2017/11/1.2.0/"><img style="display:inline;margin-bottom:-10px" src="https://d3nmt5vlzunoa1.cloudfront.net/kotlin/files/2017/03/spain.png" width="25" /></a><a title="Thai" href="http://www.somkiat.cc/kotlin-1-2-released-in-thai/"><img style="display:inline;margin-bottom:-10px" src="https://d3nmt5vlzunoa1.cloudfront.net/kotlin/files/2017/11/thai.png" width="25" /></a></div>
+<p></center></p>
+<p>Today we&#8217;re releasing Kotlin 1.2. This is a major new release and a big step on our road towards enabling the use of Kotlin across all components of a modern application.</p>
+<p>In Kotlin 1.1, we officially released the <strong>JavaScript target</strong>, allowing you to compile Kotlin code to JS and to run it in your browser. In Kotlin 1.2, we&#8217;re adding the possibility to <strong>reuse code between the JVM and JavaScript</strong>. Now you can write the business logic of your application once, and reuse it across all tiers of your application &#8211; the backend, the browser frontend and the Android mobile app. We&#8217;re also working on libraries to help you reuse more of the code, such as a cross-platform serialization library.</p>
+<p><img class="alignnone size-full wp-image-5565" src="https://d3nmt5vlzunoa1.cloudfront.net/kotlin/files/2017/11/cake3-1.png" alt="Kotlin 1.2" width="917" height="506" /><br />
+ <a href="https://blog.jetbrains.com/kotlin/2017/11/kotlin-1-2-released/#more-5530" class="more-link">Continue reading <span class="meta-nav">&rarr;</span></a></p>
+                                    </div><!-- .entry-content -->
+
+            <div class="entry-utility">
+                                    <span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="https://blog.jetbrains.com/kotlin/category/releases/" rel="category tag">Releases</a>					</span>
+                    <span class="meta-sep">|</span>
+                                                    <span class="tag-links">
+						<span class="entry-utility-prep entry-utility-prep-tag-links">Tagged</span> <a href="https://blog.jetbrains.com/kotlin/tag/sendtoall/" rel="tag">sendtoall</a>					</span>
+                    <span class="meta-sep">|</span>
+                                <span class="comments-link"><a href="https://blog.jetbrains.com/kotlin/2017/11/kotlin-1-2-released/#comments">46 Comments</a></span>
+                            </div><!-- .entry-utility -->
+        </div><!-- #post-## -->
+
+
+
+
+    <div id="nav-below" class="navigation">
+        <div class="nav-previous"><a href="https://blog.jetbrains.com/kotlin/page/2/" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+        <div class="nav-next"></div>
+    </div><!-- #nav-below -->
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+
+		<div id="primary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+
+<li id="search-2" class="widget-container widget_search"><form role="search" method="get" id="searchform" class="searchform" action="https://blog.jetbrains.com/kotlin/">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="Search" />
+				</div>
+			</form></li><li id="twitter_timeline-3" class="widget-container widget_twitter_timeline"><a class="twitter-timeline" data-widget-id="649235285335785472" data-theme="light" data-link-color="#3B94D9" data-border-color="#e8e8e8" data-chrome="nofooter" width="225" height="400" lang="EN">My Tweets</a></li><li id="text-4" class="widget-container widget_text">			<div class="textwidget"><div id="newsSubscriptionForm"></div></div>
+		</li>		<li id="recent-posts-2" class="widget-container widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+					<li>
+				<a href="https://blog.jetbrains.com/kotlin/2018/03/kotlin-1-2-30-is-out/">Kotlin 1.2.30 is out</a>
+						</li>
+					<li>
+				<a href="https://blog.jetbrains.com/kotlin/2018/02/kotlinnative-v0-6-is-here/">Kotlin/Native v0.6 is Here!</a>
+						</li>
+					<li>
+				<a href="https://blog.jetbrains.com/kotlin/2018/02/application-development-in-kotlinnative/">Application development in Kotlin/Native</a>
+						</li>
+					<li>
+				<a href="https://blog.jetbrains.com/kotlin/2018/02/using-gradle-build-cache-with-kotlin/">Using Gradle build cache with Kotlin</a>
+						</li>
+					<li>
+				<a href="https://blog.jetbrains.com/kotlin/2018/01/kotlin-1-2-20-is-out/">Kotlin 1.2.20 is out</a>
+						</li>
+				</ul>
+		</li>		<li id="text-3" class="widget-container widget_text">			<div class="textwidget"><!--<a class="twitter-timeline" data-chrome="nofooter noheader" href="https://twitter.com/search?q=kotlin+-kotlin.ru+-lang%3Aja+-lang%3Ako+-lang%3Azh+-lang%3Atr%27" data-widget-id="354929324299808768">Tweets about Kotlin</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>-->
+</div>
+		</li><li id="archives-2" class="widget-container widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+			<li><a href='https://blog.jetbrains.com/kotlin/2018/03/'>March 2018</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2018/02/'>February 2018</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2018/01/'>January 2018</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2017/12/'>December 2017</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2017/11/'>November 2017</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2017/10/'>October 2017</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2017/09/'>September 2017</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2017/08/'>August 2017</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2017/07/'>July 2017</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2017/06/'>June 2017</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2017/05/'>May 2017</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2017/04/'>April 2017</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2017/03/'>March 2017</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2017/02/'>February 2017</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2017/01/'>January 2017</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2016/12/'>December 2016</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2016/11/'>November 2016</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2016/10/'>October 2016</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2016/09/'>September 2016</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2016/08/'>August 2016</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2016/07/'>July 2016</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2016/06/'>June 2016</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2016/05/'>May 2016</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2016/04/'>April 2016</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2016/03/'>March 2016</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2016/02/'>February 2016</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2016/01/'>January 2016</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2015/12/'>December 2015</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2015/11/'>November 2015</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2015/10/'>October 2015</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2015/09/'>September 2015</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2015/08/'>August 2015</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2015/06/'>June 2015</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2015/05/'>May 2015</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2015/04/'>April 2015</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2015/03/'>March 2015</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2015/01/'>January 2015</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2014/12/'>December 2014</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2014/10/'>October 2014</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2014/08/'>August 2014</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2014/07/'>July 2014</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2014/04/'>April 2014</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2014/03/'>March 2014</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2014/02/'>February 2014</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2013/12/'>December 2013</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2013/11/'>November 2013</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2013/10/'>October 2013</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2013/08/'>August 2013</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2013/06/'>June 2013</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2013/04/'>April 2013</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2013/03/'>March 2013</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2013/02/'>February 2013</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2013/01/'>January 2013</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2012/12/'>December 2012</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2012/11/'>November 2012</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2012/10/'>October 2012</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2012/09/'>September 2012</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2012/06/'>June 2012</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2012/04/'>April 2012</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2012/03/'>March 2012</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2012/02/'>February 2012</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2012/01/'>January 2012</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2011/11/'>November 2011</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2011/10/'>October 2011</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2011/09/'>September 2011</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2011/08/'>August 2011</a></li>
+	<li><a href='https://blog.jetbrains.com/kotlin/2011/07/'>July 2011</a></li>
+		</ul>
+		</li><li id="categories-2" class="widget-container widget_categories"><h3 class="widget-title">Categories</h3>		<ul>
+	<li class="cat-item cat-item-29"><a href="https://blog.jetbrains.com/kotlin/category/android/" >Android</a>
+</li>
+	<li class="cat-item cat-item-1947"><a href="https://blog.jetbrains.com/kotlin/category/coding/" >Coding</a>
+</li>
+	<li class="cat-item cat-item-1942"><a href="https://blog.jetbrains.com/kotlin/category/community/" >community</a>
+</li>
+	<li class="cat-item cat-item-1933"><a href="https://blog.jetbrains.com/kotlin/category/digest/" >Digest</a>
+</li>
+	<li class="cat-item cat-item-1945"><a href="https://blog.jetbrains.com/kotlin/category/eap/" >EAP</a>
+</li>
+	<li class="cat-item cat-item-42"><a href="https://blog.jetbrains.com/kotlin/category/events-2/" >Events</a>
+</li>
+	<li class="cat-item cat-item-1940"><a href="https://blog.jetbrains.com/kotlin/category/guestpost/" >guestpost</a>
+</li>
+	<li class="cat-item cat-item-1948"><a href="https://blog.jetbrains.com/kotlin/category/ios/" >iOS</a>
+</li>
+	<li class="cat-item cat-item-30"><a href="https://blog.jetbrains.com/kotlin/category/javascript/" >JavaScript</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="https://blog.jetbrains.com/kotlin/category/language-design/" >Language design</a>
+</li>
+	<li class="cat-item cat-item-43"><a href="https://blog.jetbrains.com/kotlin/category/libraries/" >Libraries</a>
+</li>
+	<li class="cat-item cat-item-1944"><a href="https://blog.jetbrains.com/kotlin/category/native/" >Native</a>
+</li>
+	<li class="cat-item cat-item-41"><a href="https://blog.jetbrains.com/kotlin/category/releases/" >Releases</a>
+</li>
+	<li class="cat-item cat-item-1934"><a href="https://blog.jetbrains.com/kotlin/category/roadmap/" >Roadmap</a>
+</li>
+	<li class="cat-item cat-item-24"><a href="https://blog.jetbrains.com/kotlin/category/tools/" >Tools</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://blog.jetbrains.com/kotlin/category/uncategorized/" >Uncategorized</a>
+</li>
+		</ul>
+</li><li id="meta-2" class="widget-container widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+						<li><a href="https://blog.jetbrains.com/kotlin/wp-login.php">Log in</a></li>
+			<li><a href="https://blog.jetbrains.com/kotlin/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://blog.jetbrains.com/kotlin/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</li>			</ul>
+		</div><!-- #primary .widget-area -->
+
+	</div><!-- #main -->
+
+	<div id="footer" role="contentinfo">
+		<div id="colophon">
+
+
+
+			<div id="site-info">
+				<a href="https://blog.jetbrains.com/kotlin/" title="Kotlin Blog" rel="home">
+					Kotlin Blog				</a>
+			</div><!-- #site-info -->
+
+			<div id="site-generator">
+								<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress.</a>
+			</div><!-- #site-generator -->
+
+		</div><!-- #colophon -->
+	</div><!-- #footer -->
+
+</div><!-- #wrapper -->
+
+
+
+<script type="text/javascript"><!--
+wpa2a.targets=[];
+wpa2a.html_done=true;if(wpa2a.script_ready&&!wpa2a.done)wpa2a.init();wpa2a.script_load();
+//--></script>
+	<div style="display:none">
+	</div>
+<script type='text/javascript' src='https://d3nmt5vlzunoa1.cloudfront.net/kotlin/wp-content/plugins/map-shortcode//map.js?ver=4.4.14'></script>
+<script type='text/javascript' src='https://d3nmt5vlzunoa1.cloudfront.net/kotlin/wp-content/plugins/jetpack/modules/photon/photon.js?ver=20130122'></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201810'></script>
+<script type='text/javascript' src='https://secure.gravatar.com/js/gprofiles.js?ver=2018Maraa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://d3nmt5vlzunoa1.cloudfront.net/kotlin/wp-content/plugins/jetpack/modules/wpgroho.js?ver=4.4.14'></script>
+<script type='text/javascript' src='https://d3nmt5vlzunoa1.cloudfront.net/kotlin/wp-content/plugins/jetpack/_inc/twitter-timeline.js?ver=3.10'></script>
+<script type='text/javascript' src='https://d3nmt5vlzunoa1.cloudfront.net/kotlin/wp-includes/js/wp-embed.min.js?ver=4.4.14'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-201810.js' async defer></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:3.9.7',blog:'65532891',post:'0',tz:'4',srv:'blog.jetbrains.com'} ]);
+	_stq.push([ 'clickTrackerInit', '65532891', '0' ]);
+</script>
+</body>
+</html>
+
+<!-- Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+Page Caching using disk: enhanced
+Content Delivery Network via Amazon Web Services: CloudFront: d3nmt5vlzunoa1.cloudfront.net
+
+ Served from: blog.jetbrains.com @ 2018-03-12 00:39:37 by W3 Total Cache -->
