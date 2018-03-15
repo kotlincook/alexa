@@ -2,11 +2,8 @@ package de.kotlincook
 import com.amazon.speech.speechlet.*
 import com.amazon.speech.ui.PlainTextOutputSpeech
 import com.amazon.speech.ui.SimpleCard
-import java.time.LocalDate
-import java.time.temporal.WeekFields
-import java.util.*
 
-class KotlinSpeechlet : Speechlet {
+class KotlinBlogSpeechlet : Speechlet {
 
     override fun onSessionStarted(request: SessionStartedRequest?, session: Session?) {
     }
@@ -15,28 +12,28 @@ class KotlinSpeechlet : Speechlet {
     }
 
     override fun onIntent(request: IntentRequest, session: Session): SpeechletResponse {
-
-        // change this:
+        // DEPENDENCY: "KotlinBlogIntent" must be entered in Developer Console
         if ("KotlinBlogIntent" == request.intent.name) {
-            return binColourResponse()
+            return kotlinBlogResponse()
         }
-        else {
-            throw SpeechletException("Invalid Intent")
-        }
+        throw SpeechletException("Invalid Intent")
     }
 
     override fun onLaunch(request: LaunchRequest?, session: Session?): SpeechletResponse {
-        return binColourResponse()
+        return kotlinBlogResponse()
     }
 
-    private fun binColourResponse(): SpeechletResponse {
-        var kotlinOutput = "Simply text"
-        val speechText = "Welcome to KotlinBlog. $kotlinOutput"
-        val card = SimpleCard()
-        card.title = "KotlinBlog"
-        card.content = speechText
-        val speech = PlainTextOutputSpeech()
-        speech.text = speechText
+    private fun kotlinBlogResponse(): SpeechletResponse {
+        var blogText = NewsProvider.loadBlogItem()
+        val speechText = "Here are the news about Kotlin: $blogText"
+
+        val card = SimpleCard().apply {
+            title = "KotlinBlog"
+            content = speechText
+        }
+        val speech = PlainTextOutputSpeech().apply {
+            text = speechText
+        }
         return SpeechletResponse.newTellResponse(speech, card)
     }
 
