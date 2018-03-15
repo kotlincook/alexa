@@ -4,6 +4,8 @@ version '1.0-SNAPSHOT'
 buildscript {
     ext.kotlin_version = '1.2.30'
     ext.spring_boot_version = '1.4.3.RELEASE'
+    ext.junit5_version = '5.0.1'
+    ext.fuel_version = '1.12.1'
 
     repositories {
         mavenCentral()
@@ -13,6 +15,7 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.github.jengelman.gradle.plugins:shadow:1.2.3"
         classpath "org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_version"
+        classpath "org.junit.platform:junit-platform-gradle-plugin:1.0.1"
     }
 }
 
@@ -21,21 +24,30 @@ apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'org.springframework.boot'
 
 repositories {
+    jcenter()
     mavenCentral()
 }
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
-    compile 'com.amazon.alexa:alexa-skills-kit:1.1.2'
-    compile 'com.amazonaws:aws-lambda-java-core:1.0.0'
+    compile "com.amazon.alexa:alexa-skills-kit:1.1.2"
+    compile "com.amazonaws:aws-lambda-java-core:1.0.0"
     compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.2"
-    compile 'log4j:log4j:1.2.17'
-    compile 'org.apache.commons:commons-lang3:3.3.2'
-    compile 'org.apache.directory.studio:org.apache.commons.io:2.4'
-    compile 'org.eclipse.jetty:jetty-server:9.0.6.v20130930'
-    compile 'org.eclipse.jetty:jetty-servlet:9.0.6.v20130930'
-    compile 'org.slf4j:slf4j-api:1.7.10'
+    compile "log4j:log4j:1.2.17"
+    compile "org.apache.commons:commons-lang3:3.3.2"
+    compile "org.apache.directory.studio:org.apache.commons.io:2.4"
+    compile "org.eclipse.jetty:jetty-server:9.0.6.v20130930"
+    compile "org.eclipse.jetty:jetty-servlet:9.0.6.v20130930"
+    compile "org.slf4j:slf4j-api:1.7.10"
+    compile "com.github.kittinunf.fuel:fuel:$fuel_version" //for JVM
+    compile "com.github.kittinunf.fuel:fuel-rxjava:$fuel_version" //for RxJava support
+    compile "com.github.kittinunf.fuel:fuel-gson:$fuel_version" //for Gson support
+    compile "com.github.kittinunf.fuel:fuel-jackson:$fuel_version" //for Jackson support
+    compile "com.github.kittinunf.fuel:fuel-moshi:$fuel_version" //for Moshi support
+    testCompile "org.junit.jupiter:junit-jupiter-api:$junit5_version"
+    testRuntime "org.junit.jupiter:junit-jupiter-engine:$junit5_version"
+
 }
 
 compileKotlin {
